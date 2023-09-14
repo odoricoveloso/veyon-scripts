@@ -22,6 +22,6 @@ while 1:
     sentence = connectionSocket.recv(1024)
     newMachine = sentence.decode('ascii').split(',')
     print(newMachine)
-    os.system(f'veyon-cli networkobjects add computer "{newMachine[0]}" "{newMachine[1]}" "{newMachine[2]}" "{lab}" 2>/dev/null')
-    connectionSocket.send("Ok!".encode('ascii'))
+    os.system(f'veyon-cli networkobjects add computer "{newMachine[0]}" "{newMachine[1]}" "{newMachine[2]}" "LAB{lab}" 2>/dev/null')
+    connectionSocket.send("Conexao bem sucedida!".encode('ascii'))
     connectionSocket.close()
